@@ -1,0 +1,100 @@
+//////////////// TYPE-1 //////////////
+
+.btn {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display:inline-block;
+        border-radius: 10rem;
+        position: relative;
+        font-size: 1.7rem;
+        border: none;
+        cursor: pointer;
+        transition:all 0.1s;
+        
+        &:hover{
+            transform: translateY(-3px);
+            box-shadow:0 0.5rem 1rem var(--color-grey-dark-3);
+            &::after{
+                transform: scaleX(1.4) scaleY(1.6);
+                opacity:0;
+            }
+        }
+
+        &:active{
+            transform: translateY(-2.25px);
+            box-shadow:0 0.25rem 0.5rem var(--color-grey-dark-3);
+        }
+        &_white{
+            background-color: #fff;
+            color: var(--color-grey-dark);
+        }
+        &_green{
+            background-color: var(--color-primary);
+            color:#fff;
+        }
+        &-animated {
+            animation: moveInBottom .5s ease-out 0.75s;
+            animation-fill-mode: backwards;
+        }
+        &_header{
+            margin-top:37rem;
+            display: inline-block;
+        }
+        &_back{
+            color:var(--color-grey-dark);
+        }
+        &_tours{
+            display:block;
+            text-align:center;
+            margin:8rem 45rem;
+        }
+    }
+
+.btn_white::after{
+    content:"";
+    display:inline-block;
+    height:100%;
+    width:100%;
+    border-radius:10rem;
+    position:absolute;
+    top:0;
+    left:0;
+    background-color:#fff;
+    transition:all 0.4s;
+    z-index:-1;
+}
+
+.btn_green::after{
+    content:"";
+    display:inline-block;
+    height:100%;
+    width:100%;
+    border-radius:10rem;
+    position:absolute;
+    top:0;
+    left:0;
+    background-color:var(--color-primary);
+    transition:all 0.4s;
+    z-index:-1;
+}
+
+//////////////// TYPE-2 //////////////
+
+.btn-text{
+    color:var(--color-primary);
+    padding: .4rem;
+    text-decoration: none;
+    border-bottom: .1rem solid var(--color-primary);
+    margin:6rem;
+    transition: all 0.2s;
+    &-stories{
+        font-size: 1.6rem;
+        margin:62rem;
+    }
+    &:hover{
+        background-color: var(--color-primary);
+        color:#fff;
+        box-shadow: 0 0.75rem 1.25rem rgba(0, 0, 0, 0.199);
+    }
+}

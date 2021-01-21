@@ -1,0 +1,92 @@
+.popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.788);
+    padding:14rem 20rem;
+    opacity:0;
+    visibility: hidden;
+    transition: all 0.2s;
+
+    &:target{
+        opacity:1;
+        visibility: visible;
+    }
+
+    &_close{
+        font-size: 3rem;
+        text-decoration: none;
+        position: absolute;
+        right:-2rem;
+        top:-3.5rem;
+        transition: all 0.2s;
+        &:hover{
+            color: var(--color-primary-dark);
+        }
+    }
+
+    &_box{
+        height: 50rem;
+        background-color:#fff;
+        display:flex;
+        transform: scale(0.5);
+        transition: all 0.2s 0.1s;
+    }
+    &:target &_box{
+        transform: scale(1);
+    }
+
+    &_image{
+        flex:0 0 35%;
+        &_fit{
+            width: 100%;
+            height:50%;
+            overflow:hidden;
+        }
+        &_img{
+            width: 100%;
+            background-size: cover;
+        }
+    }
+    &_detail{
+        flex:1;
+        margin:auto 5rem;
+        position: relative;
+    }
+
+    &_detail>*:not(:last-child){
+        margin-bottom: 2.5rem;
+    }
+
+    &_heading{
+        font-size:3.25rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        background-image: linear-gradient(to right,var(--color-primary-light),var(--color-primary-dark));
+        -webkit-background-clip:text;
+        color:transparent;
+        transition:all 0.2s;
+        &:hover{
+            font-size:3.25rem;
+            transform: translateY(-5px);
+            text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.199);
+        }
+    }
+    &_subheading{
+        font-size:1.7rem;
+        color:var(--color-grey-dark);
+    }
+    &_para{
+        font-size:1.37rem;
+        color:var(--color-grey-dark-2);
+        line-height: 2.4rem;
+        column-count: 2;
+        column-gap: 4rem;
+        column-rule: 1px solid var(--color-grey-light-2);
+    }
+    &:target &{
+        opacity:1;
+    }
+}
